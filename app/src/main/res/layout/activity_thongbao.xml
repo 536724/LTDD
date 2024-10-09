@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".NotificationActivity">
 
-    <!-- Header với nút quay lại và các biểu tượng -->
     <LinearLayout
         android:id="@+id/headerLayout"
         android:layout_width="0dp"
@@ -19,7 +18,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Nút quay lại -->
         <ImageView
             android:id="@+id/backImageView"
             android:layout_width="wrap_content"
@@ -27,7 +25,6 @@
             android:src="@drawable/quaylai"
             android:contentDescription="Back" />
 
-        <!-- Tiêu đề -->
         <TextView
             android:id="@+id/notificationTitleTextView"
             android:layout_width="0dp"
@@ -38,7 +35,6 @@
             android:textStyle="bold"
             android:textSize="25dp" />
 
-        <!-- Biểu tượng hỗ trợ -->
         <ImageView
             android:id="@+id/helpImageView"
             android:layout_width="wrap_content"
@@ -48,7 +44,6 @@
             android:contentDescription="Help"
             android:layout_marginEnd="10dp"/>
 
-        <!-- Biểu tượng menu -->
         <ImageView
             android:id="@+id/menuImageView"
             android:layout_width="wrap_content"
@@ -69,7 +64,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/headerLayout">
 
-        <!-- Nút Cập nhật đơn hàng -->
         <Button
             android:id="@+id/orderUpdateButton"
             android:layout_width="wrap_content"
@@ -78,7 +72,6 @@
             android:background="@drawable/thongbao"
             android:text="Cập nhật đơn hàng" />
 
-        <!-- Nút Ưu đãi -->
         <Button
             android:id="@+id/promotionButton"
             android:layout_width="wrap_content"
@@ -87,7 +80,6 @@
             android:background="@drawable/thongbao"
             android:text="Ưu đãi" />
 
-        <!-- Nút Lời nhắc -->
         <Button
             android:id="@+id/reminderButton"
             android:layout_width="wrap_content"
