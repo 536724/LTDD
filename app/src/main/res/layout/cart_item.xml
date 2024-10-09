@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/itemImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/goitambun"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/itemTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Trải Nghiệm Tắm Bùn Khoáng Tại Khu Nghỉ Dưỡng Hòn Tằm Nha Trang"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/itemImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontalBias="0"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/itemDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Combo Vé Vào Cổng \nKhu B Hòn Tằm \n4/10/2024 \n1 x Trẻ em (100-139cm) \n2 x Người lớn, 1 x Người \nlớn tuổi(60+) "
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/itemTitle"
+        app:layout_constraintStart_toEndOf="@id/itemImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/itemVoucher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giảm 5%"
+        android:background="#F24242"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/itemDetails"
+        app:layout_constraintStart_toEndOf="@id/itemImage"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/itemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1,351,850 đ"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/itemVoucher"
+        app:layout_constraintStart_toEndOf="@id/itemImage"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/itemDiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giảm 71,150 đ"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintTop_toBottomOf="@+id/itemPrice"
+        app:layout_constraintStart_toEndOf="@id/itemImage"
+        android:layout_marginTop="4dp"/>
+    <ImageButton
+        android:id="@+id/itemDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_delete"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="8dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
