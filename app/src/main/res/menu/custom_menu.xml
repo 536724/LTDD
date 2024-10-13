@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home" android:title="Trang chủ" android:icon="@drawable/baseline_home"/>
+    <item android:id="@+id/gift" android:title="Ưu đãi" android:icon="@drawable/gift"/>
+    <item android:id="@+id/favourite" android:title="Yêu thích" android:icon="@drawable/favorite"/>
+    <item android:id="@+id/travel" android:title="Chuyến đi" android:icon="@drawable/baseline_card_travel"/>
+    <item android:id="@+id/account" android:title="Tài Khoản " android:icon="@drawable/baseline_account"/>
+</menu>
