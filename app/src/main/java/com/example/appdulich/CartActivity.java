@@ -1,6 +1,9 @@
 package com.example.appdulich;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,6 +35,15 @@ public class CartActivity extends AppCompatActivity {
         // Thiết lập Adapter và kết nối với RecyclerView
         cartAdapter = new CartAdapter(cartItemList);
         cartRecyclerView.setAdapter(cartAdapter);
+
+        ImageButton quayLai = findViewById(R.id.backButton);
+        quayLai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Finish the current activity and go back to HomeFragment
+                finish();
+            }
+        });
     }
 
     // Hàm mẫu để thêm dữ liệu vào danh sách giỏ hàng

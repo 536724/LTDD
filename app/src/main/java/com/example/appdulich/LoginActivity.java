@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.appdulich.Fragment.HomeFragment;
+
 public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +22,10 @@ public class LoginActivity extends Activity {
         });
         Button btnLogin = findViewById(R.id.loginButton);
 
-        // Sự kiện nhấn nút "Đăng nhập"
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Chuyển sang NotificationActivity
-                Intent intent = new Intent(LoginActivity.this, NotificationActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

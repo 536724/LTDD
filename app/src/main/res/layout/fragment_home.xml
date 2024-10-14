@@ -12,6 +12,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:background="@drawable/custom_border_search"
         android:gravity="center"
         android:orientation="horizontal"
@@ -22,7 +23,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_search"/>
+            android:src="@drawable/baseline_search" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -35,24 +36,27 @@
     </LinearLayout>
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/icon_giohang"
+        android:layout_width="54dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="4dp"
         android:background="@color/white"
         android:src="@drawable/shopping_cart"
-        android:layout_marginRight="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="43dp"
+        android:layout_height="42dp"
         android:background="@color/white"
         android:src="@drawable/notifications"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ScrollView
         android:layout_width="match_parent"

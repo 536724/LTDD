@@ -30,7 +30,8 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
                 return new TripFragment();
             case 4:
                 return new ProfileFragment();
-            default: return new HomeFragment();
+            default:
+                return new HomeFragment();
         }
     }
 
