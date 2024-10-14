@@ -4,8 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-
+import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class NotificationActivity extends AppCompatActivity {
@@ -15,12 +14,15 @@ public class NotificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
 
-        ImageButton quayLai = findViewById(R.id.backButton);
-        quayLai.setOnClickListener(new View.OnClickListener() {
+        Button backIcon = findViewById(R.id.orderUpdateButton);
+
+        // Sự kiện nhấn icon quay lại
+        backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                finish();
+                // Chuyển sang CartActivity (Giỏ hàng)
+                Intent intent = new Intent(NotificationActivity.this, CartActivity.class);
+                startActivity(intent);
             }
         });
     }
