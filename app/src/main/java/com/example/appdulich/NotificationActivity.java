@@ -1,7 +1,9 @@
 package com.example.appdulich;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,23 +14,16 @@ public class NotificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thongbao);
 
-        // Xử lý sự kiện khi nhấn nút quay lại
-        ImageView backImageView = findViewById(R.id.backImageView);
-        backImageView.setOnClickListener(v -> {
-            // Kết thúc activity và quay lại màn hình trước đó
-            finish();
-        });
+        Button backIcon = findViewById(R.id.orderUpdateButton);
 
-        findViewById(R.id.orderUpdateButton).setOnClickListener(v -> {
-            // Xử lý nút Cập nhật đơn hàng
-        });
-
-        findViewById(R.id.promotionButton).setOnClickListener(v -> {
-            // Xử lý nút Ưu đãi
-        });
-
-        findViewById(R.id.reminderButton).setOnClickListener(v -> {
-            // Xử lý nút Lời nhắc
+        // Sự kiện nhấn icon quay lại
+        backIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Chuyển sang CartActivity (Giỏ hàng)
+                Intent intent = new Intent(NotificationActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
         });
     }
 }

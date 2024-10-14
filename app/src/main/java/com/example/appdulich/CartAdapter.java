@@ -6,17 +6,14 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
 
     private List<CartItem> cartItemList;
 
-    // Constructor để truyền danh sách các item
     public CartAdapter(List<CartItem> cartItemList) {
         this.cartItemList = cartItemList;
     }
@@ -24,21 +21,29 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @NonNull
     @Override
     public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Gán layout item (cart_item.xml)
+        // Liên kết layout của từng mục (cart_item.xml) vào adapter
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item, parent, false);
         return new CartViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
-        // Lấy item từ danh sách và gán dữ liệu vào view
-        CartItem item = cartItemList.get(position);
-        holder.itemTitle.setText(item.getTitle());
-        holder.itemDetails.setText(item.getDetails());
-        holder.itemPrice.setText(item.getPrice());
-        holder.itemDiscount.setText(item.getDiscount());
-        holder.itemVoucher.setText(item.getVoucher());
-        holder.itemImage.setImageResource(item.getImageResId());
+        // Lấy dữ liệu từ vị trí của item
+        CartItem cartItem = cartItemList.get(position);
+
+        // Set dữ liệu vào các View của item
+        holder.itemImage.setImageResource(cartItem.getImageResId());
+        holder.itemTitle.setText(cartItem.getTitle());
+        holder.itemDetails.setText(cartItem.getDetails());
+        holder.itemPrice.setText(cartItem.getPrice());
+        holder.itemVoucher.setText(cartItem.getVoucher());
+        holder.itemDiscount.setText(cartItem.getDiscount());
+
+        // Sự kiện khi nhấn nút xóa
+        holder.itemDelete.setOnClickListener(v -> {
+            cartItemList.remove(position); // Xóa item khỏi danh sách
+            notifyItemRemoved(position); // Cập nhật RecyclerView
+        });
     }
 
     @Override
@@ -46,11 +51,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         return cartItemList.size();
     }
 
-    // ViewHolder cho các item trong RecyclerView
-    static class CartViewHolder extends RecyclerView.ViewHolder {
-
+    // ViewHolder: giữ các View của từng item
+    public static class CartViewHolder extends RecyclerView.ViewHolder {
         ImageView itemImage;
-        TextView itemTitle, itemDetails, itemPrice, itemDiscount, itemVoucher;
+        TextView itemTitle, itemDetails, itemPrice, itemVoucher, itemDiscount;
         ImageButton itemDelete;
 
         public CartViewHolder(@NonNull View itemView) {
@@ -59,8 +63,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             itemTitle = itemView.findViewById(R.id.itemTitle);
             itemDetails = itemView.findViewById(R.id.itemDetails);
             itemPrice = itemView.findViewById(R.id.itemPrice);
-            itemDiscount = itemView.findViewById(R.id.itemDiscount);
             itemVoucher = itemView.findViewById(R.id.itemVoucher);
+            itemDiscount = itemView.findViewById(R.id.itemDiscount);
             itemDelete = itemView.findViewById(R.id.itemDelete);
         }
     }

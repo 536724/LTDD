@@ -43,8 +43,8 @@
             android:contentDescription="Select All" />
     </LinearLayout>
 
-    <!-- RecyclerView để cuộn danh sách các mục giỏ hàng -->
     <androidx.recyclerview.widget.RecyclerView
+        android:orientation="vertical"
         android:id="@+id/cartRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
