@@ -34,7 +34,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:layout_width="181dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_background"
                     android:padding="8dp"
@@ -43,7 +43,7 @@
                     android:textSize="14sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_background"
                     android:padding="8dp"
@@ -52,7 +52,7 @@
                     android:textSize="14sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_background"
                     android:padding="8dp"
