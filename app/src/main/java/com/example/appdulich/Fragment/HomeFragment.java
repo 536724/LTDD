@@ -1,5 +1,6 @@
 package com.example.appdulich.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,7 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
+import com.example.appdulich.Activity.EntertainmentActivity;
+import com.example.appdulich.Activity.HotelActivity;
+import com.example.appdulich.Activity.SearchActivity;
 import com.example.appdulich.Adapter.CityAdapter;
 import com.example.appdulich.Adapter.TicketAdapter;
 import com.example.appdulich.Model.City;
@@ -24,6 +29,7 @@ public class HomeFragment extends Fragment {
     ArrayList<Ticket> ticketArrayList;
     RecyclerView rvTicket;
     RecyclerView rvCity;
+    LinearLayout khuvc, ksan, tk;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,13 +40,41 @@ public class HomeFragment extends Fragment {
         initDataRvCity();
         initDataRvTicket();
         CityAdapter cityAdapter = new CityAdapter(list);
-        TicketAdapter ticketAdapter = new TicketAdapter(ticketArrayList);
+        TicketAdapter ticketAdapter = new TicketAdapter(ticketArrayList, getActivity());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         GridLayoutManager gridManager = new GridLayoutManager(getActivity(), 2);
         rvTicket.setLayoutManager(gridManager);
         rvTicket.setAdapter(ticketAdapter);
         rvCity.setLayoutManager(linearLayoutManager);
         rvCity.setAdapter(cityAdapter);
+
+        khuvc = v.findViewById(R.id.linearLayout2);
+
+        khuvc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), EntertainmentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ksan = v.findViewById(R.id.linearLayout3);
+        ksan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), HotelActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        tk = v.findViewById(R.id.linearLayout);
+        ksan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
         return v;
     }
 
