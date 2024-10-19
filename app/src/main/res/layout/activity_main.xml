@@ -22,5 +22,5 @@
         app:itemTextColor="@color/color_menu"
         app:menu="@menu/custom_menu"
         app:labelVisibilityMode="labeled"/>
-    
+
 </RelativeLayout>
