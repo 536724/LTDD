@@ -1,6 +1,9 @@
 package com.example.appdulich.Activity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -12,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.appdulich.R;
 
 public class EntertainmentActivity extends AppCompatActivity {
-
+    ImageButton btnClose;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,5 +34,21 @@ public class EntertainmentActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        AnhXa();
+        Xuly();
+    }
+
+    private void Xuly() {
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+    }
+
+    private void AnhXa(){
+        btnClose = findViewById(R.id.ibClose);
     }
 }

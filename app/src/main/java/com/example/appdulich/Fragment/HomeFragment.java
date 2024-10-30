@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 
 import com.example.appdulich.Activity.EntertainmentActivity;
 import com.example.appdulich.Activity.HotelActivity;
+import com.example.appdulich.Activity.MoveActivity;
 import com.example.appdulich.Activity.SearchActivity;
 import com.example.appdulich.Adapter.CityAdapter;
 import com.example.appdulich.Adapter.TicketAdapter;
@@ -29,7 +30,7 @@ public class HomeFragment extends Fragment {
     ArrayList<Ticket> ticketArrayList;
     RecyclerView rvTicket;
     RecyclerView rvCity;
-    LinearLayout khuvc, ksan, tk;
+    LinearLayout khuvc, ksan, tk, dichuyen;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,10 +69,19 @@ public class HomeFragment extends Fragment {
         });
 
         tk = v.findViewById(R.id.linearLayout);
-        ksan.setOnClickListener(new View.OnClickListener() {
+        tk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        dichuyen = v.findViewById(R.id.linearLayout4);
+        dichuyen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MoveActivity.class);
                 startActivity(intent);
             }
         });

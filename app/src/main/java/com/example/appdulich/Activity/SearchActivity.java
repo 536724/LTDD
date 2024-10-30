@@ -2,6 +2,8 @@ package com.example.appdulich.Activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -19,6 +21,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 public class SearchActivity extends AppCompatActivity {
     private ViewPager2 viewPager;
     private TabLayout tabLayout;
+    ImageButton btnClose;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,19 +41,36 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+        AnhXa();
+        Xuly();
+
         new TabLayoutMediator(tabLayout, viewPager,
-                (tab, position) -> {
-                    switch (position) {
-                        case 0:
-                            tab.setText("Top");
-                            break;
-                        case 1:
-                            tab.setText("Moi Nhat");
-                            break;
-                        case 2:
-                            tab.setText("Xu huong");
-                            break;
-                    }
-                }).attach();
+            (tab, position) -> {
+                switch (position) {
+                    case 0:
+                        tab.setText("Top");
+                        break;
+                    case 1:
+                        tab.setText("Moi Nhat");
+                        break;
+                    case 2:
+                        tab.setText("Xu huong");
+                        break;
+                }
+            }).attach();
+        }
+
+    private void Xuly() {
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
+
+    private void AnhXa(){
+        btnClose = findViewById(R.id.ibClose1);
+    }
+
 }

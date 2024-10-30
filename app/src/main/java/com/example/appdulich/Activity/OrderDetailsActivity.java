@@ -13,17 +13,25 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.appdulich.R;
 
-public class HotelActivity extends AppCompatActivity {
+public class OrderDetailsActivity extends AppCompatActivity {
     ImageButton btnClose;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_hotel);
+        setContentView(R.layout.activity_order_details);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        btnClose = findViewById(R.id.imageButton2);
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
         });
 
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
@@ -33,21 +41,5 @@ public class HotelActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        AnhXa();
-        Xuly();
-    }
-
-    private void Xuly() {
-        btnClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-    }
-
-    private void AnhXa() {
-        btnClose = findViewById(R.id.ib_close);
     }
 }

@@ -43,8 +43,13 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
         holder.view.setText(list.get(position).getView()+"");
 
         final int id = position;
-        Intent intent = new Intent(context, TicketDetailsActivity.class);
-        ((Activity) context).startActivity(intent);
+        holder.ticket_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, TicketDetailsActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
