@@ -1,14 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.ProfileFragment">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#f4f6f9">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Member section with Avatar, Level, and Info -->
+    <LinearLayout
+        android:layout_width="375dp"
+        android:layout_height="81dp"
+        android:background="#dceffb"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- Avatar -->
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/baseline_account" />
+
+        <!-- User Info -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/member_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thành viên"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/level_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LV1 Bạc"
+                android:textColor="#00bff3"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Voucher, Credit, Gift Card -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        android:background="#ffffff">
 
-</FrameLayout>
+        <Button
+            android:id="@+id/voucher_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+ Mã ưu đãi" />
+
+        <Button
+            android:id="@+id/credit_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0 Credit" />
+
+        <Button
+            android:id="@+id/giftcard_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0 Gift Card" />
+    </LinearLayout>
+
+    <!-- Menu Items (Orders, Account, Ratings, etc.) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        android:background="#ffffff">
+
+        <!-- Orders -->
+        <LinearLayout
+            android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/shopping_cart" />
+
+        <TextView
+            android:id="@+id/order_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Đơn hàng"
+            android:textColor="#000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- User Info -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_account" />
+
+        <TextView
+            android:id="@+id/user_info_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Thông tin người dùng"
+            android:textColor="#000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Ratings -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_mess" />
+
+        <TextView
+            android:id="@+id/ratings_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Đánh giá"
+            android:textColor="#000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Help, App Rating, Settings -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Help -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <ImageView
+                android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/phone" />
+
+            <TextView
+                android:id="@+id/help_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Trợ giúp"
+                android:textColor="#000"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- App Rating -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/baseline_favorite_24" />
+
+            <TextView
+                android:id="@+id/app_rating_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Đánh giá ứng dụng"
+                android:textColor="#000"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Settings -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/setup" />
+
+            <TextView
+                android:id="@+id/settings_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Cài đặt"
+                android:textColor="#000"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>

@@ -35,11 +35,4 @@
         android:text="Chưa có chuyến đi sắp tới...!"
         />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/custom_menu"/>
-
 </RelativeLayout>

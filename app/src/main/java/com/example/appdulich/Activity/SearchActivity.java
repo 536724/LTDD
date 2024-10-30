@@ -51,10 +51,10 @@ public class SearchActivity extends AppCompatActivity {
                         tab.setText("Top");
                         break;
                     case 1:
-                        tab.setText("Moi Nhat");
+                        tab.setText("Mới nhất");
                         break;
                     case 2:
-                        tab.setText("Xu huong");
+                        tab.setText("Xu hướng");
                         break;
                 }
             }).attach();

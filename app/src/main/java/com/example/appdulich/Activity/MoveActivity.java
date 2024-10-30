@@ -64,11 +64,11 @@ public class MoveActivity extends AppCompatActivity {
     private void initData() {
         list = new ArrayList<>();
 
-        list.add(new Bus("Hanoi", "Beautiful city with old quarters", 5, 150, 200, R.drawable.xebuyt2tang));
-        list.add(new Bus("Ho Chi Minh", "Bustling city with vibrant nightlife", 4, 300, 250, R.drawable.xebuyt2tang));
-        list.add(new Bus("Da Nang", "Coastal city with amazing beaches", 5, 200, 150, R.drawable.xebuyt2tang));
-        list.add(new Bus("Hue", "Ancient city with historical sites", 4, 100, 100, R.drawable.xebuyt2tang));
-        list.add(new Bus("Nha Trang", "Popular tourist city with beautiful resorts", 4, 250, 180, R.drawable.xebuyt2tang));
-        list.add(new Bus("Phu Quoc", "Island city with amazing seafood", 5, 180, 220, R.drawable.xebuyt2tang));
+        list.add(new Bus("Hà Nội", "Beautiful city with old quarters", 5, 150, 200, R.drawable.th1));
+        list.add(new Bus("Hồ Chí Minh", "Bustling city with vibrant nightlife", 4, 300, 250, R.drawable.th2));
+        list.add(new Bus("Đà Nẵng", "Coastal city with amazing beaches", 5, 200, 150, R.drawable.th3));
+        list.add(new Bus("Huế", "Ancient city with historical sites", 4, 100, 100, R.drawable.th4));
+        list.add(new Bus("Nha Trang", "Popular tourist city with beautiful resorts", 4, 250, 180, R.drawable.th5));
+        list.add(new Bus("Phú Quốc", "Island city with amazing seafood", 5, 180, 220, R.drawable.th6));
     }
 }

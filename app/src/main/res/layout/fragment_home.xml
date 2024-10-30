@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="280dp"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:background="@drawable/custom_border_search"
@@ -93,7 +93,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Vui choi\ntrai nghiem"
+                        android:text="Vui chơi\ntrải nghiệm"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -117,7 +117,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Di chuyen"
+                        android:text="Di chuyển"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -141,7 +141,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="khach san"
+                        android:text="khách sạn"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -164,7 +164,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Xem them"
+                        android:text="Xem thêm"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -183,7 +183,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ban muon di dau choi ?"
+                    android:text="Bạn muốn đi đâu chơi ?"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -207,7 +207,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="De xuat"
+                android:text="Đề xuất"
                 android:textColor="@color/orange"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -227,7 +227,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
-                android:text="Gan day"
+                android:text="Gần đây"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/textView"
