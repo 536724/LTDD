@@ -1,14 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.LoveFragment">
+    tools:context=".MainActivity">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Tiêu đề -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yêu thích"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-</FrameLayout>
+    <!-- Danh sách của tôi -->
+    <TextView
+        android:id="@+id/my_list_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Danh sách của tôi"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <!-- Tạo danh sách-->
+
+    <!-- Hộp danh sách đã lưu -->
+    <TextView
+        android:id="@+id/add_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tạo danh sách"
+        android:textSize="16sp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_list_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/my_list_label" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/my_list"
+        android:layout_width="match_parent"
+        app:layout_goneMarginTop="20dp"
+        android:layout_height="209dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_rectangle_gray4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/my_list_label">
+
+        <LinearLayout
+            android:id="@+id/linearLayout8"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_gray_love"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/activity_label"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:text="Hoạt động ở Việt Nam"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
+
+        <TextView
+            android:id="@+id/activity_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 hoạt động"
+            android:textColor="#888888"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/activity_label"
+            app:layout_constraintTop_toBottomOf="@id/activity_label" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Mục đã lưu -->
+    <TextView
+        android:id="@+id/saved_items_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Các mục đã lưu"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/my_list"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Ảnh trái tim khi trống -->
+    <ImageView
+        android:id="@+id/heart_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/favorite"
+        android:backgroundTint="@color/orange"
+        app:layout_constraintTop_toBottomOf="@id/saved_items_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/empty_saved_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mục yêu thích đang trống"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/heart_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/instruction_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nhấn vào icon hình tìm trên trang dịch vụ để lưu vào đây"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/empty_saved_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Nút Khám phá -->
+    <Button
+        android:id="@+id/explore_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Khám phá"
+        android:backgroundTint="@color/orange"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/instruction_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@android:color/white"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
