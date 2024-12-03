@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".CartActivity">
 
-    <!-- Thanh trên cùng -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="0dp"
@@ -54,7 +53,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Thanh dưới cùng -->
     <LinearLayout
         android:id="@+id/bottomBar"
         android:layout_width="0dp"

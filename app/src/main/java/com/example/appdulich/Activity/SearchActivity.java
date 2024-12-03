@@ -36,7 +36,15 @@ public class SearchActivity extends AppCompatActivity {
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                // Tạo hiệu ứng chuyển cảnh
+                finish();
+            }
+        });
+
+        ImageButton back = findViewById(R.id.idClose1);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Finish the current activity and go back to HomeFragment
                 finish();
             }
         });
@@ -70,7 +78,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void AnhXa(){
-        btnClose = findViewById(R.id.ibClose1);
+        btnClose = findViewById(R.id.idClose1);
     }
 
 }

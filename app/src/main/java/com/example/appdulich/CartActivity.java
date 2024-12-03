@@ -22,17 +22,12 @@ public class CartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart); // Đảm bảo layout khớp với file XML
 
-        // Tìm RecyclerView
         cartRecyclerView = findViewById(R.id.cartRecyclerView);
 
-        // Thiết lập LinearLayoutManager cho RecyclerView
         cartRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Tạo danh sách các items (cart items)
         cartItemList = new ArrayList<>();
-        loadCartItems(); // Hàm này sẽ thêm dữ liệu vào danh sách
-
-        // Thiết lập Adapter và kết nối với RecyclerView
+        loadCartItems();
         cartAdapter = new CartAdapter(cartItemList);
         cartRecyclerView.setAdapter(cartAdapter);
 

@@ -51,7 +51,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         return cartItemList.size();
     }
 
-    // ViewHolder: giữ các View của từng item
     public static class CartViewHolder extends RecyclerView.ViewHolder {
         ImageView itemImage;
         TextView itemTitle, itemDetails, itemPrice, itemVoucher, itemDiscount;
