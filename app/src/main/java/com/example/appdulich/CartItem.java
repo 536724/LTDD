@@ -8,6 +8,7 @@ public class CartItem {
     private String price;
     private String voucher;
     private String discount;
+    private boolean selected; // Thêm thuộc tính selected
 
     public CartItem(int imageResId, String title, String details, String price, String voucher, String discount) {
         this.imageResId = imageResId;
@@ -16,9 +17,18 @@ public class CartItem {
         this.price = price;
         this.voucher = voucher;
         this.discount = discount;
+        this.selected = false; // Mặc định là chưa chọn
     }
 
-    // Getter methods
+    // Getter và setter
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
+
     public int getImageResId() {
         return imageResId;
     }

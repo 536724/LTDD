@@ -1,8 +1,9 @@
 package com.example.appdulich;
 
 import android.os.Bundle;
-import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,19 +11,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import android.widget.Toast;
 
 public class CartActivity extends AppCompatActivity {
 
     private RecyclerView cartRecyclerView;
     private CartAdapter cartAdapter;
     private List<CartItem> cartItemList;
+    private TextView totalPriceTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart); // Đảm bảo layout khớp với file XML
+        setContentView(R.layout.activity_cart);
 
         cartRecyclerView = findViewById(R.id.cartRecyclerView);
+        totalPriceTextView = findViewById(R.id.totalPriceTextView); // TextView để hiển thị tổng tiền
 
         cartRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -32,20 +36,48 @@ public class CartActivity extends AppCompatActivity {
         cartRecyclerView.setAdapter(cartAdapter);
 
         ImageButton quayLai = findViewById(R.id.backButton);
-        quayLai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Finish the current activity and go back to HomeFragment
-                finish();
-            }
+        quayLai.setOnClickListener(v -> finish());
+
+        // Xử lý nút thanh toán
+        Button payButton = findViewById(R.id.paySelectedButton);
+        payButton.setOnClickListener(v -> {
+            paySelectedItems();
         });
     }
 
-    // Hàm mẫu để thêm dữ liệu vào danh sách giỏ hàng
     private void loadCartItems() {
-        cartItemList.add(new CartItem(R.drawable.goitambun, "Trải Nghiệm Tắm Bùn Khoáng Tại Khu Nghỉ Dưỡng Hòn Tằm Nha Trang", "Combo Vé Vào Cổng \nKhu B Hòn Tằm \n4/10/2024 \n1 x Trẻ em (100-139cm) \n2 x Người lớn, 1 x Người lớn tuổi(60+)", "1,351,850 đ", "Giảm 5%", "Giảm 71,150 đ"));
-        cartItemList.add(new CartItem(R.drawable.xebuyt2tang, "Vé Xe Buýt 2 Tầng Ngắm Cảnh Ở Thành Phố Hồ Chí Minh từ City Sightseeing", "Tuyến Tour Thành Phố \nBuổi tối (:16:00-21:00) 1 vòng (Không Hop-on Hop-off) \n5/10/2024 \n1 x người lớn, 1 x trẻ em(1-12)", "1,351,850 đ", "Giảm 5%", "Giảm 71,150 đ"));
+        cartItemList.add(new CartItem(R.drawable.goitambun, "Trải Nghiệm Tắm Bùn Khoáng", "Combo Vé Vào Cổng", "1,351,850 đ", "Giảm 5%", "Giảm 71,150 đ"));
+        cartItemList.add(new CartItem(R.drawable.xebuyt2tang, "Vé Xe Buýt 2 Tầng", "Tuyến Tour Thành Phố", "1,351,850 đ", "Giảm 5%", "Giảm 71,150 đ"));
+    }
 
+    private void paySelectedItems() {
+        // Xóa tất cả các mục được chọn
+        for (int i = cartItemList.size() - 1; i >= 0; i--) {
+            if (cartItemList.get(i).isSelected()) {
+                cartItemList.remove(i);
+            }
+        }
+
+        cartAdapter.notifyDataSetChanged(); // Cập nhật lại RecyclerView
+
+        // Hiển thị thông báo thanh toán thành công
+        Toast.makeText(this, "Thanh toán thành công!", Toast.LENGTH_SHORT).show();
+
+        // Cập nhật tổng tiền
+        updateTotalPrice();
+    }
+
+    private void updateTotalPrice() {
+        double total = 0;
+        for (CartItem item : cartItemList) {
+            if (item.isSelected()) {
+                String priceString = item.getPrice().replaceAll("[^\\d]", "");  // Chỉ lấy số từ chuỗi giá
+                if (!priceString.isEmpty()) {
+                    double price = Double.parseDouble(priceString);
+                    total += price;
+                }
+            }
+        }
+        totalPriceTextView.setText("Tổng tiền: " + total + " đ");
     }
 }
-
