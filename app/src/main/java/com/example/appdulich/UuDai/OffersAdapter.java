@@ -35,7 +35,7 @@ public class OffersAdapter extends RecyclerView.Adapter<OffersAdapter.OfferViewH
     public void onBindViewHolder(@NonNull OfferViewHolder holder, int position) {
         Offer offer = offerList.get(position);
         holder.offerTitle.setText(offer.getTitle());
-        holder.offerPrice.setText("₫ " + offer.getPrice());
+        holder.offerPrice.setText(offer.getPrice() + "₫ " );
         holder.offerImage.setImageResource(offer.getImageResourceId());
     }
 

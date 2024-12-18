@@ -38,7 +38,7 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.ViewHolder
     public void onBindViewHolder(@NonNull TicketAdapter.ViewHolder holder, int position) {
         holder.image.setImageResource(list.get(position).getImage());
         holder.name.setText(list.get(position).getName());
-        holder.price.setText("Tu d "+list.get(position).getPrice()+"");
+        holder.price.setText("Từ "+list.get(position).getPrice()+" đ");
         holder.rate.setText(list.get(position).getRate()+"");
         holder.view.setText(list.get(position).getView()+"");
 

@@ -17,7 +17,7 @@ public class CartItem {
         this.price = price;
         this.voucher = voucher;
         this.discount = discount;
-        this.selected = false; // Mặc định là chưa chọn
+        this.selected = false;
     }
 
     // Getter và setter

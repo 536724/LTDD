@@ -57,5 +57,5 @@
         android:textSize="20sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:text="Tu d 650,000"/>
+        android:text="Từ 650,000 đ"/>
 </LinearLayout>

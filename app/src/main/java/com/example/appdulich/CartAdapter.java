@@ -22,7 +22,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @NonNull
     @Override
     public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Liên kết layout của từng mục (cart_item.xml) vào adapter
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item, parent, false);
         return new CartViewHolder(view);
     }
@@ -41,17 +40,15 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
         holder.itemCheckbox.setChecked(cartItem.isSelected());
 
-        // Sự kiện khi CheckBox thay đổi
         holder.itemCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            cartItem.setSelected(isChecked);  // Cập nhật trạng thái chọn
-            updateTotalPrice(); // Cập nhật tổng tiền khi trạng thái checkbox thay đổi
+            cartItem.setSelected(isChecked);
+            updateTotalPrice();
         });
 
-        // Sự kiện khi nhấn nút xóa
         holder.itemDelete.setOnClickListener(v -> {
-            cartItemList.remove(position); // Xóa item khỏi danh sách
-            notifyItemRemoved(position); // Cập nhật RecyclerView
-            updateTotalPrice(); // Cập nhật lại tổng tiền khi xóa mục
+            cartItemList.remove(position);
+            notifyItemRemoved(position);
+            updateTotalPrice();
         });
     }
 
@@ -69,7 +66,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         ImageView itemImage;
         TextView itemTitle, itemDetails, itemPrice, itemVoucher, itemDiscount;
         ImageButton itemDelete;
-        CheckBox itemCheckbox; // Thêm CheckBox
+        CheckBox itemCheckbox;
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
