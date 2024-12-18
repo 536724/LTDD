@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link NT_Fragment#newInstance} factory method to
+ * Use the  factory method to
  * create an instance of this fragment.
  */
 public class NT_Fragment extends Fragment {
